@@ -9,10 +9,8 @@ var express = require('express'),
 var server = http.createServer(app);
 var io = socketIo.listen(server);
 
-
 var port = process.env.PORT || 8080; // Use the port Heroku gives or 8080
 
-io.close();
 
 server.listen(port, function(){
     console.log("Serving on port %d in %s mode", server.address().port, app.settings.env);
@@ -32,7 +30,9 @@ function createRoom (req, res) {
 // keep track of all lines drawn
 var lineHistory = [];
 
+var users = 0;
 io.on('connection', function (socket) {
+    users++;
     // send the history to the new client
     for (var i in lineHistory){
         socket.emit('drawLine', {line: lineHistory[i]});
@@ -44,4 +44,10 @@ io.on('connection', function (socket) {
         // send line to all clients
         io.emit('drawLine', {line: data.line})
     });
+    socket.on("disconnect", function(){
+        users--;        
+    });
+    if (users == 0){
+        io.close();
+    }
 });
