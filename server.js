@@ -45,6 +45,7 @@ io.on('connection', function (socket) {
         io.emit('drawLine', {line: data.line})
     });
     socket.on("disconnect", function(){
+        console.log("Somoneleft!");
         users--;        
     });
     if (users == 0){
