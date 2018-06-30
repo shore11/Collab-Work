@@ -1,15 +1,14 @@
 var express = require('express'),
     app = express(),
     http = require('http'),
-    socketIo = require('socket.io');
+    socketIo = require('socket.io')({
+        transports : ["xhr-polling"],
+        polling_duration : 10
+    });
 
 var server = http.createServer(app);
 var io = socketIo.listen(server);
-// need to set up polling to using at heroku
-io.configure(function() {
-    io.set("transports", ["xhr-polling"]);
-    io.set("polling duration", 10);
-});
+
 
 var port = process.env.PORT || 8080; // Use the port Heroku gives or 8080
 
