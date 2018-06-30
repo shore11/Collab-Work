@@ -5,7 +5,17 @@ var express = require('express'),
 
 var server = http.createServer(app);
 var io = socketIo.listen(server);
-server.listen();
+// need to set up polling to using at heroku
+io.configure(function() {
+    io.set("transports", ["xhr-polling"]);
+    io.set("polling duration", 10);
+});
+
+var port = process.env.PORT || 8080; // Use the port Heroku gives or 8080
+
+server.listen(port, function(){
+    console.log("Serving on port %d in %s mode", server.address().port, app.settings.env);
+});
 
 // look for static files here
 app.use(express.static(__dirname + "/public"));
