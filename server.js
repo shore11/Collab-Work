@@ -5,7 +5,7 @@ var express = require('express'),
 
 var server = http.createServer(app);
 var io = socketIo.listen(server);
-server.listen(80);
+server.listen();
 
 // look for static files here
 app.use(express.static(__dirname + "/public"));
