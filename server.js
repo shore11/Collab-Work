@@ -49,6 +49,6 @@ io.on('connection', function (socket) {
         users--;        
     });
     if (users == 0){
-        io.close();
+        socket.disconnect();
     }
 });
