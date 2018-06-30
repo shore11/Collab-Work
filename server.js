@@ -12,6 +12,8 @@ var io = socketIo.listen(server);
 
 var port = process.env.PORT || 8080; // Use the port Heroku gives or 8080
 
+io.close();
+
 server.listen(port, function(){
     console.log("Serving on port %d in %s mode", server.address().port, app.settings.env);
 });
