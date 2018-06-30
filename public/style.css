@@ -1,0 +1,30 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas {
+    display: block;
+}
+
+.col-lg-4 {
+    text-align: center;
+    height: 70px;
+}
+
+.innerCol {
+    text-align: center;
+    background-color: aliceblue;
+    height: 70px;
+    border: 2px solid lightgreen;
+    border-radius: 20px;
+}
+
+.btnJoin {
+    background-color: lightgray;
+}
