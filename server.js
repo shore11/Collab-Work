@@ -39,19 +39,21 @@ io.on('connection', function (socket) {
     if(io.nsps['/'].adapter.rooms["room-" + roomNumber] && io.nsps['/'].adapter.rooms["room-" + roomNumber].length > 1) roomNumber++;
     socket.join("room-" + roomNumber);
 
+    io.in("room-"+ roomNumber).emit("connectR", "you are in room " + roomNumber);
 
     // send the history to the new client
     for (var i in lineHistory){
         socket.in("room-" + roomNumber).emit('drawLine', {line: lineHistory[i]});
     }
     // handler  for message type drawLine
-    socket.on('drawLine', function(data) {
+    socket.in("room-"+roomNumber).on('drawLine', function(data) {
         // add received line to history
         lineHistory.push(data.line);
         // send line to all clients
         io.in("room-"+ roomNumber).emit('drawLine', {line: data.line})
     });
-    socket.on("disconnect", function(){
+    socket.in("room-"+roomNumber).on("disconnect", function(){
+        socket.leave("room-"+roomNumber);
         console.log("Someone left!");
         users--;     
     });     

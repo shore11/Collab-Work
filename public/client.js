@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
         mouse.move = true;
 
     };
+
+    socket.on("connectR", function(data) {
+       var box = document.getElementById("textbox");
+       box.value = data;
+    });
        // draw line received from server
 	socket.on('drawLine', function (data) {
       var line = data.line;
