@@ -31,21 +31,28 @@ function createRoom (req, res) {
 var lineHistory = [];
 
 var users = 0;
+var roomNumber = 1;
 io.on('connection', function (socket) {
     users++;
+
+    // Increase roomNumber to only have two clients in a room
+    if(io.nsps['/'].adapter.rooms["room-" + roomNumber] && io.nsps['/'].adapter.rooms["room-" + roomNumber].length > 1) roomNumber++;
+    socket.join("room-" + roomNumber);
+
+
     // send the history to the new client
     for (var i in lineHistory){
-        socket.emit('drawLine', {line: lineHistory[i]});
+        socket.in("room-" + roomNumber).emit('drawLine', {line: lineHistory[i]});
     }
     // handler  for message type drawLine
     socket.on('drawLine', function(data) {
         // add received line to history
         lineHistory.push(data.line);
         // send line to all clients
-        io.emit('drawLine', {line: data.line})
+        io.in("room-"+ roomNumber).emit('drawLine', {line: data.line})
     });
     socket.on("disconnect", function(){
-        console.log("Somoneleft!");
+        console.log("Someone left!");
         users--;     
     });     
 });
