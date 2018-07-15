@@ -28,3 +28,7 @@ body, html {
 .btnJoin {
     background-color: lightgray;
 }
+
+textarea {
+    resize: none;
+}

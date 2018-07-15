@@ -1,3 +1,5 @@
+var socket = io.connect();
+var room = "room1";
 document.addEventListener("DOMContentLoaded", function() {
     var mouse = {
         click: false,
@@ -10,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var context = canvas.getContext('2d');
     var width = window.innerWidth;
     var height = window.innerHeight;
-    var socket = io.connect();
+//    var socket = io.connect();
+
 
     canvas.width = width;
     canvas.height = height;
@@ -52,3 +55,22 @@ document.addEventListener("DOMContentLoaded", function() {
    }
    mainLoop();
 });
+
+function changeRoom(){
+//    var socket = io.connect(); 
+    room = document.getElementById('room1').value;
+    console.log("Chanigng", room);
+    socket.emit('changeRoom',{room: room });
+}
+
+function changeRoom2(){
+//    var socket = io.connect();
+    room = document.getElementById('room2').value
+    socket.emit('changeRoom',{room: room});
+}
+
+function changeRoom3(){
+//    var socket = io.connect();
+    room = document.getElementById('room3').value;
+    socket.emit('changeRoom',{room: room});
+}
