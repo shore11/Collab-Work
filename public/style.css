@@ -36,6 +36,10 @@ textarea {
 }
 
 .roomHeader {
-    padding-top: 10px;
+    padding-top: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hold-ta {
+    background-color: black;
 }
