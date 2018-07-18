@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     socket.on('editText', function(data){
         console.log("We received data from the server to textarea")
         var texta = document.getElementById("textarea");
-        texta.innerHTML = data.text;
+        texta.value = data.text;
     });
 
 
