@@ -66,6 +66,7 @@ canvas {
 
 button {
     background-color: transparent;
-    border: none;
+    border: dodgerblue dotted;
+    border-radius: 20px;
     
 }
