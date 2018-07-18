@@ -17,7 +17,7 @@ body, html {
     height: 70px;
 }
 
-.innerCol {
+.innerCol, h2 {
     text-align: center;
     background-color: aliceblue;
     height: 70px;
