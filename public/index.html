@@ -26,12 +26,14 @@
         <button class="btn btn-success" onclick="changeRoom3()" id="room3" value="Ravenclaw">Join Room</button></div></div>
         </div>
         <hr style="height: 5px;">
-        <input type="text" id="textbox"></input><br>
+        <!--END OF HEADER BUTTONS-->
+        <div id="tellRoom"></div><br>
+         <input type="text" id="textbox"></input><br>
         <div class="row hold-ta">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <div ng-controller="myCtrl">
-                    <textarea autofocus placeholder="Just Start typing to begin collaborating" id="textarea" rows="20" cols="100" ng-change="updateText()" ng-model="textModel"></textarea>
+                    <textarea autofocus placeholder="Just Start typing to begin collaborating" id="textarea" rows="30" cols="200" ng-change="updateText()" ng-model="textModel"></textarea>
                 </div>
             </div>
             <div class="col-lg-2"></div>
