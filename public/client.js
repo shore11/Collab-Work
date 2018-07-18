@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.onmouseup = function(e){mouse.click = false;};
 
     canvas.onmousemove = function(e) {
-        mouse.pos.x = e.clientX / width;
-        mouse.pos.y = e.clientY / height;
+        mouse.pos.x = e.clientX / 170;//width;
+        mouse.pos.y = e.clientY / 300; // height;
         mouse.move = true;
 
     };
