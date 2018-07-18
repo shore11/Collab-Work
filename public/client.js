@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // receive changes made to text area from server
     socket.on('editText', function(data){
         console.log("we received changes from server to textarea");
+        angular.module('myApp', [])
+            .controller('myCtrl', ['$scope', function($scope) {
+                $scope.textModel = data.text;
+        }
+    }]);
         $scope.textModel = data.text;
     });
 
