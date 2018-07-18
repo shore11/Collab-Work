@@ -25,6 +25,14 @@ body, html {
     border-radius: 20px;
 }
 
+.innerCol2 {
+    text-align: center;
+    background-color: aliceblue;
+    height: 120px;
+    border: 2px solid rgb(182, 24, 13);
+    border-radius: 20px;
+}
+
 .btnJoin {
     background-color: lightgray;
 }
