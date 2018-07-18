@@ -27,13 +27,19 @@
         </div>
         <hr style="height: 5px;">
         <!--END OF HEADER BUTTONS-->
-        <div id="tellRoom"></div><br>
+        <div class="row">
+            <div class="col-lg-4"><div class="col-lg-12 innerCol">
+                <div id="tellRoom"></div><br>
+            </div></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
          <input type="text" id="textbox"></input><br>
         <div class="row hold-ta">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <div ng-controller="myCtrl">
-                    <textarea autofocus placeholder="Just Start typing to begin collaborating" id="textarea" rows="30" cols="200" ng-change="updateText()" ng-model="textModel"></textarea>
+                    <textarea autofocus placeholder="Just Start typing to begin collaborating" id="textarea" rows="25" cols="150" ng-change="updateText()" ng-model="textModel"></textarea>
                 </div>
             </div>
             <div class="col-lg-2"></div>
