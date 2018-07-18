@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var context = canvas.getContext('2d');
     var width = window.innerWidth;
     var height = window.innerHeight;
+
 //    var socket = io.connect();
 
 
@@ -31,12 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // receive changes made to text area from server
     socket.on('editText', function(data){
-        console.log("we received changes from server to textarea");
-        angular.module('myApp', [])
-            .controller('myCtrl', ['$scope', function($scope) {
-                $scope.textModel = data.text;
-        }
-    ]);});
+        var texta = document.getElementById("textarea");
+        texta.innerHTML = data.text;
+    });
 
 
     socket.on("connectR", function(data) {
