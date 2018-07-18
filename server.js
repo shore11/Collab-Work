@@ -37,6 +37,7 @@ io.on('connection', function (socket) {
     });
     // accept changes made to the textarea
     socket.on('editText', function(data) {
+        console.log("textarea says : ", data.text);
         socket.in(roomNumber).emit('editText', {text: data.text});
         console.log("We sent the server changes from textarea");
     });
