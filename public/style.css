@@ -63,3 +63,9 @@ canvas {
 .toolbar {
     height: 50px;
 }
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
