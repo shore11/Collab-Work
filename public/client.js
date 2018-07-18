@@ -74,3 +74,9 @@ function changeRoom3(){
     room = document.getElementById('room3').value;
     socket.emit('changeRoom',{room: room});
 }
+
+// handle changes in text area
+angular.module('myApp', [])
+    .controller('myCtrl', [$scope, function($scope) {
+        console.log("we made it ot the angular stuff");        
+    }]);
