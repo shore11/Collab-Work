@@ -78,5 +78,8 @@ function changeRoom3(){
 // handle changes in text area
 angular.module('myApp', [])
     .controller('myCtrl', ['$scope', function($scope) {
-        console.log("we made it ot the angular stuff");        
+        //define what the change function will do
+        $scope.updateText = function() {
+            console.log("we made it ot the angular stuff"); 
+        }
     }]);
