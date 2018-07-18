@@ -93,7 +93,6 @@ angular.module('myApp', [])
         $scope.updateText = function() {
             console.log("we made it to the angular stuff"); 
             //send the changes to the server
-            var text1 = document.getElementById("textarea").innerHTML;
-            socket.emit('editText', {text: text1})
+            socket.emit('editText', {text: $scope.textModel})
         }
     }]);

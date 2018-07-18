@@ -2,7 +2,7 @@ var express = require('express'),
     app = express(),
     http = require('http'),
     socketIo = require('socket.io')({
-        transports : ["websockets"],
+        transports : ["xhr-polling"],
         polling_duration : 10
     });
 
