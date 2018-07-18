@@ -43,3 +43,10 @@ textarea {
 .hold-ta {
     background-color: black;
 }
+
+canvas {
+    border-color: aquamarine;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
