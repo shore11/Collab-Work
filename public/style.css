@@ -28,7 +28,7 @@ body, html {
 .innerCol2 {
     text-align: center;
     background-color: aliceblue;
-    height: 560px;
+    height: 540px;
     border: 2px solid rgb(182, 24, 13);
     border-radius: 20px;
     border-width: 5px;
@@ -47,6 +47,7 @@ textarea {
 .roomHeader {
     padding-top: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
 }
 
 .hold-ta {
