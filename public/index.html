@@ -27,8 +27,14 @@
         </div>
         <hr style="height: 5px;">
         <input type="text" id="textbox"></input><br>
-        <div ng-controller="myCtrl">
-            <textarea id="textarea" rows="20" cols="100" ng-change="updateText()" ng-model="textModel"></textarea>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div ng-controller="myCtrl">
+                    <textarea id="textarea" rows="20" cols="100" ng-change="updateText()" ng-model="textModel"></textarea>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
         </div>
             <canvas id="drawing"></canvas>
     </body>
