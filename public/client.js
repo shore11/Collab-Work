@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // receive changes made to text area from server
     socket.on('editText', function(data){
+        console.log("We received data from the server to textarea")
         var texta = document.getElementById("textarea");
         texta.innerHTML = data.text;
     });
