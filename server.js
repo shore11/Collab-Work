@@ -21,7 +21,7 @@ app.use(express.static(__dirname + "/public"));
 console.log("Serving on port 8080");
 
 var lineHistory = [];
-var roomNumber = "room1";
+var roomNumber = "";//"room1";
 var users = 0;
 //var roomNumber = 1;
 io.on('connection', function (socket) {
