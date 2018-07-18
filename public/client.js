@@ -75,11 +75,20 @@ function changeRoom3(){
     socket.emit('changeRoom',{room: room});
 }
 
+// receive changes made to text area from server
+socket.on('editText', function(data){
+    console.log("we received changes from server to textarea");
+    $scope.textModel = data.text;
+});
+
+
 // handle changes in text area
 angular.module('myApp', [])
     .controller('myCtrl', ['$scope', function($scope) {
         //define what the change function will do
         $scope.updateText = function() {
-            console.log("we made it ot the angular stuff"); 
+            console.log("we made it to the angular stuff"); 
+            //send the changes to the server
+            socket.emit('editText', {text: $scope.textModel})
         }
     }]);

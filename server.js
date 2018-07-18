@@ -35,6 +35,11 @@ io.on('connection', function (socket) {
         socket.join(data.room);
         io.in(roomNumber).emit("connectR", "you are in room " + roomNumber);
     });
+    // accept changes made to the textarea
+    socket.on('editText', function(data) {
+        socket.in(roomNumber).emit('editText', {text: data.text});
+        console.log("We sent the server changes from textarea");
+    });
 
     // send the history to the new client
     for (var i in lineHistory){
