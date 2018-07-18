@@ -28,9 +28,10 @@ body, html {
 .innerCol2 {
     text-align: center;
     background-color: aliceblue;
-    height: 120px;
+    height: 300px;
     border: 2px solid rgb(182, 24, 13);
     border-radius: 20px;
+    border-width: 5px;
 }
 
 .btnJoin {
