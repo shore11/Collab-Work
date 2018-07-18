@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     };
 
+    // receive changes made to text area from server
+    socket.on('editText', function(data){
+        console.log("we received changes from server to textarea");
+        $scope.textModel = data.text;
+    });
+
+
     socket.on("connectR", function(data) {
        var box = document.getElementById("textbox");
        box.value = data;
@@ -75,11 +82,6 @@ function changeRoom3(){
     socket.emit('changeRoom',{room: room});
 }
 
-// receive changes made to text area from server
-socket.on('editText', function(data){
-    console.log("we received changes from server to textarea");
-    $scope.textModel = data.text;
-});
 
 
 // handle changes in text area
