@@ -33,7 +33,7 @@ io.on('connection', function (socket) {
         socket.leave(roomNumber);
         roomNumber = data.room;
         socket.join(data.room);
-        io.in(roomNumber).emit("connectR", "you are in room " + roomNumber);
+        io.in(roomNumber).emit("connectR", "You are in room " + roomNumber);
     });
     // accept changes made to the textarea
     socket.on('editText', function(data) {

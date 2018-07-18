@@ -39,10 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     socket.on("connectR", function(data) {
-       var box = document.getElementById("textbox");
        var tell = document.getElementById("tellRoom");
        tell.innerHTML = data;
-       box.value = data;
     });
        // draw line received from server
 	socket.on('drawLine', function (data) {
