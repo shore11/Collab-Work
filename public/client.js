@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .controller('myCtrl', ['$scope', function($scope) {
                 $scope.textModel = data.text;
         }
-    }]);
+    ]);
         $scope.textModel = data.text;
     });
 
