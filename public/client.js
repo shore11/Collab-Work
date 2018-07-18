@@ -16,16 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
 //    var socket = io.connect();
 
 
-    canvas.width = 170;
-    canvas.height = 300;
+    canvas.width = width;
+    canvas.height = height;
 
     //register mouse events
     canvas.onmousedown = function(e){mouse.click = true;};
     canvas.onmouseup = function(e){mouse.click = false;};
 
     canvas.onmousemove = function(e) {
-        mouse.pos.x = e.clientX / 170;//width;
-        mouse.pos.y = e.clientY / 300; // height;
+        mouse.pos.x = e.clientX / width;
+        mouse.pos.y = e.clientY / height;
         mouse.move = true;
 
     };
