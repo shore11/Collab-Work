@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //    var socket = io.connect();
 
 
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = 170;
+    canvas.height = 300;
 
     //register mouse events
     canvas.onmousedown = function(e){mouse.click = true;};
